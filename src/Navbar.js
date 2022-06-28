@@ -5,9 +5,8 @@ import logo from "./logo.svg";
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
-  const navRef = useRef();
-
-  // useEffect(() => console.log(navRef.current.className = ), []);
+  const containerRef = useRef(null);
+  const linksRef = useRef(null);
 
   const pages = links.map((x) => (
     <a key={x.id} href={x.url}>
@@ -21,6 +20,17 @@ const Navbar = () => {
     </a>
   ));
 
+  //calculates the height of the links container
+  //-----ensure you include height: auto !important for desktop to prevent override
+  useEffect(() => {
+    const linksHeight = linksRef.current.getBoundingClientRect().height; //gets dimension of the Dom node in current(links)
+    if (show) {
+      containerRef.current.style.height = `${linksHeight}px`; //ref.current allows us to access dom properites with dot notation
+    } else {
+      containerRef.current.style.height = `${0}px`;
+    }
+  }, [show]);
+
   ////------html page--------////
 
   return (
@@ -32,11 +42,13 @@ const Navbar = () => {
         </button>
       </header>
 
-      <div
-        ref={navRef}
-        className={`${show && "show-container"}  ${"links-container"}`}
+      <div //note: we need a container to wrap ul to be able to perform dynmaic logic
+        ref={containerRef}
+        className="links-container" //we can use conditional rendering of container size (static size)
       >
-        <ul className="links">{pages}</ul>
+        <ul ref={linksRef} className="links">
+          {pages}
+        </ul>
       </div>
 
       <ul className="social-icons"> {socialLinks}</ul>
