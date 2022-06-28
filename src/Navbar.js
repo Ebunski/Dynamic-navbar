@@ -9,15 +9,15 @@ const Navbar = () => {
   const linksRef = useRef(null);
 
   const pages = links.map((x) => (
-    <a key={x.id} href={x.url}>
-      {x.text}
-    </a>
+    <li key={x.id}>
+      <a href={x.url}>{x.text}</a>
+    </li>
   ));
 
   const socialLinks = social.map((x) => (
-    <a key={x.id} href={x.url}>
-      {x.icon}
-    </a>
+    <li key={x.id}>
+      <a href={x.url}>{x.icon}</a>
+    </li>
   ));
 
   //calculates the height of the links container
