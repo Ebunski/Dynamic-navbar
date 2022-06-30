@@ -31,7 +31,12 @@ const Navbar = () => {
     }
   }, [show]);
 
-  ////------html page--------////
+/*
+=============== 
+Navbar
+===============
+*/
+
 
   return (
     <nav className="nav-center">
