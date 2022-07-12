@@ -50,12 +50,13 @@ Also i noted to create another container wrapping the <ul> </ul> to enable me pe
    I learnt how to layer the classes for responsive design.
    e.g
    navbar - with the bg and color for mobile and flex for desktop
+   header containing the items for mobile
    hiding of toggle for desktop and hiding social for mobile
    links container with an height of zero and giving an height on show.
 
 3. React:
    Learnt how to combine useEffect, useRef and useState
-   Practical example of useRef hook - navbars,forms.
+   Practical example of useRef hook - navbars,forms,useEffects - used to access DOM nodes.
    .getBoundingClientRect() - for getting dimensions of elements
    Refresher on vanilla javascript method of accessing css properties.
 
@@ -64,7 +65,7 @@ Overall it was a wonderful process.
 ## Author
 
 - Website - [coming soon...]
-- LinkedIn - [Ebunoluwa Oyebola]
+- LinkedIn - https://www.linkedin.com/in/ebunoluwa-oyebola-1490021b1
 - Twitter - [@Ebun_ski](https://www.twitter.com/Ebun_ski)
 
 ## Acknowledgments
